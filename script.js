@@ -18,34 +18,45 @@ var lowLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "`", "{", "|", "}", "~"];
 var index = Math.floor(Math.random() * password.length)
+var newArray = []
+var resultArr = []
 
 function generatePassword() {
     var password = prompt("Enter Password length between 8 & 129 Characters long")
     if (password < 8 || password > 129) {
         alert("Password MUST be between 8 & 129 characters")
         return;
-    } else if (password > 8 && password < 129) {
-        var includeCapLetters = confirm("Would you like capital letters in your password?");
-        var inclueLowLetters = confirm("Would you like lowercase letters in your password?");
-        var includeNumbers = confirm("Would you like numbers in your password?")
-        var includeSpecialChar = confirm("Would you like special characters in your password?")
-
+    } else {
         
-// how am i getting user password length (look at rock paper sci example)
-// is user length more than 8 but less than 100
+    }
+    
+    var newArr = []
+    var capLetters = confirm("Would you like to use capital letters?")
+    var lowLetters = confirm("Would you like to use lowercase letters?")
+    var numbers = confirm("Would you like to use numbers?")
+    var specialChar = confirm("Would you like to use Special Characters?")
 
+    if (capLetters === false && lowLetters === false && numbers === false && specialChar === false) {
+        alert("Must choose at least ONE of these opntions")
+        return;
+    }
 
- var myArr = [1, 2, 3]
- var myArr2 = ["a", "b", "c"]
- var newArray = []
- if (capLetters == true) (
-    newArray.concat(capLetters)
- ) 
+    if (capLetters) {
+        newArr.concat(capLetters)
+    }
 
- var password = 10
- password
+    if (lowLetters) {
+        newArr.concat(lowLetters)
+    }
 
- for (let i = 0; i < password; i++) {
+    if (numbers) {
+        newArr.concat(numbers)
+    }
+
+    if (specialChar) {
+        newArr.concat(specialChar)
+    }
+    for (let i = 0; i < password; i++) {
 
  }
 
@@ -57,10 +68,6 @@ function generatePassword() {
 
     return ;
 }
-
-if (!userChoice) {
-    return;
-  }
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");

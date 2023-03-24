@@ -37,39 +37,35 @@ function generatePassword() {
         
     }
     
-    var capLetters = confirm("Would you like to use capital letters?")
-    var lowLetters = confirm("Would you like to use lowercase letters?")
-    var numbers = confirm("Would you like to use numbers?")
-    var specialChar = confirm("Would you like to use Special Characters?")
+    var capLet = confirm("Would you like to use capital letters?")
+    var lowLet = confirm("Would you like to use lowercase letters?")
+    var numb = confirm("Would you like to use numbers?")
+    var spChar = confirm("Would you like to use Special Characters?")
 
-    if (capLetters === false && lowLetters === false && numbers === false && specialChar === false) {
+    if (!capLet && !lowLet && !numb && !spChar) {
         alert("Must choose at least ONE of these opntions")
         return;
     }
 
-    if (capLetters) {
+    if (capLet) {
         newArray = newArray.concat(capLetters)
         resultArr.push(getRandom(capLetters)) 
     }
 
-    if (lowLetters) {
+    if (lowLet) {
         newArray = newArray.concat(lowLetters)
-        resultArr.push(getRandom(lowLetters))
     }
 
-    if (numbers) {
+    if (numb) {
         newArray = newArray.concat(numbers)
-        resultArr.push(getRandom(numbers))
     }
 
-    if (specialChar) {
+    if (spChar) {
         newArray = newArray.concat(specialChar)
-        resultArr.push(getRandom(specialChar))
     }
-    console.log(newArray)
-    console.log(resultArr)
-    for (let i = 0; i < resultArr.length; i++) {
 
+    for (let i = 0; i < resultArr.length; i++) {
+       resultArr.push(getRandom(capLetters))
  }
 }
 

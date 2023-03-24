@@ -29,8 +29,8 @@ function getRandom(x) {
 }
 
 function generatePassword() {
-    var password = prompt("Enter Password length between 8 & 129 Characters long")
-    if (password < 8 || password > 129) {
+    var passwordLength = prompt("Enter Password length between 8 & 129 Characters long")
+    if (passwordLength < 8 || passwordLength > 129) {
         alert("Password MUST be between 8 & 129 characters")
         return;
     } else {
@@ -47,23 +47,30 @@ function generatePassword() {
         return;
     }
 
+    var password = "";
+    var newArray = [];
+
     if (capLet) {
-        newArray = newArray.concat(capLetters) 
+        newArray = newArray.concat(capLetters)
+        password += getRandom(capLetters)
     }
 
     if (lowLet) {
         newArray = newArray.concat(lowLetters)
+        password += getRandom(lowLetters)
     }
 
     if (numb) {
         newArray = newArray.concat(numbers)
+        password += getRandom(numbers)
     }
 
     if (spChar) {
         newArray = newArray.concat(specialChar)
+        password += getRandom(specialChar)
     }
 
-    for (let i = 0; i < password.Length; i++) {
+    for (let i = password.length; i < passwordLength; i++) {
        password += getRandom(newArray);
  }
  return password;

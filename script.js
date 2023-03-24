@@ -48,8 +48,7 @@ function generatePassword() {
     }
 
     if (capLet) {
-        newArray = newArray.concat(capLetters)
-        resultArr.push(getRandom(capLetters)) 
+        newArray = newArray.concat(capLetters) 
     }
 
     if (lowLet) {
@@ -64,9 +63,10 @@ function generatePassword() {
         newArray = newArray.concat(specialChar)
     }
 
-    for (let i = 0; i < resultArr.length; i++) {
-       resultArr.push(getRandom(capLetters))
+    for (let i = 0; i < password.Length; i++) {
+       password += getRandom(newArray);
  }
+ return password;
 }
 
 // Assignment Code
